@@ -15,18 +15,6 @@ const HeroSection = ({
 }) => {
   return (
     <div className="w-full h-full relative overflow-hidden">
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-purple-950 via-black to-red-950 opacity-70 z-10" /> */}
-
-      <div className="absolute inset-0 opacity-10 z-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, 0.3) 25%, rgba(255, 0, 255, 0.3) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, 0.3) 75%, rgba(255, 0, 255, 0.3) 76%, transparent 77%, transparent), 
-                           linear-gradient(90deg, transparent 24%, rgba(255, 0, 255, 0.3) 25%, rgba(255, 0, 255, 0.3) 26%, transparent 27%, transparent 74%, rgba(255, 0, 255, 0.3) 75%, rgba(255, 0, 255, 0.3) 76%, transparent 77%, transparent)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
 
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
@@ -42,7 +30,7 @@ const HeroSection = ({
       </motion.div>
 
       <div className="absolute inset-0 z-20">
-        <FloatingCards />
+        {/* <FloatingCards /> */}
       </div>
 
       <div

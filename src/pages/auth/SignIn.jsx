@@ -288,7 +288,7 @@ const SignIn = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.7 }}
-                className="flex justify-center space-x-4 text-sm text-gray-500 pt-4"
+                className="flex justify-center items-center text-xs text-gray-500 pt-2"
               >
                 <button
                   onClick={() => console.log("Terms")}

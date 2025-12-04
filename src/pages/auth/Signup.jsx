@@ -7,10 +7,10 @@ import { validateSignupForm } from "../../services/utils/formValidation";
 import { useNavigate } from "react-router-dom";
 import { UserRound, Mail, Lock, Phone, Flag, EyeOff, Eye } from "lucide-react";
 import UsersThree from "/assets/icons/UsersThree.svg";
-import Money from "/assets/icons/Money.svg";
 import Trophy from "/assets/icons/Trophy.svg";
 import Gift from "/assets/icons/Trophy.svg";
 import Sheild from "/assets/icons/Shield.svg";
+import { verifyAge } from "../../services/utils/ageVerification";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -43,21 +43,41 @@ const SignUp = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    // Basic validation
-    const validation = validateSignupForm(formData);
+  // Step 1: Validate basic form fields (email, password, etc.)
+  const validation = validateSignupForm(formData);
+  
+  if (!validation.isValid) {
+    // Show first error from basic validation
+    showToast(validation.errors[0].message, "error");
+    return;
+  }
 
-    if (!validation.isValid) {
-      // Show first error
-      showToast(validation.errors[0].message, "error");
-      return;
-    }
+  // Step 2: Verify age using date of birth
+  const ageVerification = verifyAge(
+    formData.dobDay, 
+    formData.dobMonth, 
+    formData.dobYear, 
+    18  // minimum age
+  );
 
-    // Success
-    showToast("Account created successfully! Redirecting...", "success");
-    console.log("Form submitted:", formData);
-  };
+  if (!ageVerification.isVerified) {
+    showToast(ageVerification.error, "error");
+    return;
+  }
+
+  // Step 3: Success! User is verified
+  showToast(
+    `Account created! Age verified: ${ageVerification.age} years old`, 
+    "success"
+  );
+  
+  console.log("Form submitted:", {
+    ...formData,
+    verifiedAge: ageVerification.age
+  });
+};
 
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
   const months = [
@@ -78,7 +98,7 @@ const SignUp = () => {
   const years = Array.from({ length: 100 }, (_, i) => currentYear - i);
 
   return (
-    <div className="max-h-screen bg-black relative overflow-hidden flex">
+    <div className="h-screen bg-black relative overflow-hidden flex">
       {/* Toast Notification */}
       <Toast
         show={toast.show}

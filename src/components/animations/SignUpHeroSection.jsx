@@ -20,19 +20,7 @@ const SignUpHeroSection = ({
   ],
 }) => {
   return (
-    <div className="w-full h-screen relative overflow-hidden">
-      {/* Grid Background */}
-      <div className="absolute inset-0 opacity-10 z-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(0deg, transparent 24%, rgba(255, 165, 0, 0.3) 25%, rgba(255, 165, 0, 0.3) 26%, transparent 27%, transparent 74%, rgba(255, 165, 0, 0.3) 75%, rgba(255, 165, 0, 0.3) 76%, transparent 77%, transparent), 
-                           linear-gradient(90deg, transparent 24%, rgba(255, 165, 0, 0.3) 25%, rgba(255, 165, 0, 0.3) 26%, transparent 27%, transparent 74%, rgba(255, 165, 0, 0.3) 75%, rgba(255, 165, 0, 0.3) 76%, transparent 77%, transparent)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-      </div>
-
+    <div className="w-full h-full relative overflow-hidden">
       {/* Main Image */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
@@ -43,7 +31,7 @@ const SignUpHeroSection = ({
         <img
           src={imagePath}
           alt={title}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-bottom"
         />
       </motion.div>
 
