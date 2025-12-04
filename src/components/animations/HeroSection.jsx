@@ -82,7 +82,7 @@ const HeroSection = ({
             {text}
           </span>
 
-          <div className="grid grid-cols-2 last:col-span-3 w-full mt-6">
+          <div className="grid grid-cols-2 w-full mt-6">
             {stats.map((stat, idx) => (
               <motion.div
                 key={idx}
@@ -90,9 +90,9 @@ const HeroSection = ({
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 1 + idx * 0.1, type: "spring" }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="flex items-center w-full gap-2"
+                className="flex items-center w-full gap-2 last:col-span-2 justify-center"
               >
-                <img src={stat.icon} sizes={20} className="size-14 mt-0.5"/>
+                <img src={stat.icon} sizes={20} className="size-14 mt-1"/>
                 <div className="flex items-center text-base font-Oxanium text-white tracking-wider leading-normal">
                   <span>{stat.value}</span>
                   <span>{stat.label}</span>

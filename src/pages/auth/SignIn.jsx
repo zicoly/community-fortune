@@ -8,6 +8,7 @@ import { Mail, Lock, Eye, EyeOff, LogIn, Chrome } from "lucide-react";
 import UsersThree from "/assets/icons/UsersThree.svg"
 import Money from "/assets/icons/Money.svg"
 import Trophy from "/assets/icons/Trophy.svg"
+import { useNavigate } from "react-router-dom";
 
 
 const SignIn = () => {
@@ -18,6 +19,7 @@ const SignIn = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const { toast, showToast, hideToast } = useToast();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -87,12 +89,12 @@ const SignIn = () => {
           -z-10 animate-pulse
         "
           ></div>
-          <div className="relative bg-black/80 backdrop-blur-xl rounded-3xl p-10">
+          <div className="relative bg-black/80 backdrop-blur-xl rounded-3xl p-8">
             <motion.h2
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="text-4xl font-bold text-white mb-3"
+              className="text-2xl font-bold text-white mb-3"
               style={{ fontFamily: "Orbitron" }}
             >
               Log In
@@ -101,7 +103,7 @@ const SignIn = () => {
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9 }}
-              className="text-[#FFFFFFB2] mb-12 text-xl"
+              className="text-[#FFFFFFB2] mb-10 text-base"
               style={{ fontFamily: "Oxanium" }}
             >
               Continue your winning journey
@@ -115,7 +117,7 @@ const SignIn = () => {
                 transition={{ delay: 1 }}
               >
                 <label
-                  className="block text-base font-medium text-gray-300 mb-2"
+                  className="block text-sm font-medium text-gray-300 mb-2"
                   style={{ fontFamily: "Oxanium" }}
                 >
                   Email or Username <span className="text-[#FF00FF]">*</span>
@@ -144,7 +146,7 @@ const SignIn = () => {
                 transition={{ delay: 1.1 }}
               >
                 <label
-                  className="block text-base font-medium text-gray-300 mb-2"
+                  className="block text-sm font-medium text-gray-300 mb-2"
                   style={{ fontFamily: "Oxanium" }}
                 >
                   Password <span className="text-[#FF00FF]">*</span>
@@ -194,7 +196,7 @@ const SignIn = () => {
                 </label>
                 <button
                   onClick={() => console.log("Forgot password")}
-                  className="text-base text-[#FF00FF] hover:text-pink-300 transition-colors font-semibold cursor-pointer"
+                  className="text-sm text-[#FF00FF] hover:text-pink-300 transition-colors font-semibold cursor-pointer"
                   style={{ fontFamily: "Oxanium" }}
                 >
                   Forgot password?
@@ -209,8 +211,7 @@ const SignIn = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleSubmit}
-                className="w-full bg-linear-to-r from-[#FF00FF] to-[#3E003E] transition-all duration-500 text-white font-bold py-4 rounded-lg shadow-lg shadow-black/25 uppercase tracking-wider mt-10 cursor-pointer hover:scale-105 active:scale-95"
-                style={{ fontFamily: "Orbitron" }}
+                className="w-full bg-linear-to-r from-[#FF00FF] to-[#3E003E] transition-all duration-500 text-white font-bold py-4 rounded-lg shadow-lg shadow-black/25 uppercase tracking-wider mt-8 cursor-pointer hover:scale-105 active:scale-95 text-base font-Orbitron"
               >
                 LOG IN
               </motion.button>
@@ -220,7 +221,7 @@ const SignIn = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.4 }}
-                className="relative mb-6"
+                className="relative mb-4"
               >
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-gray-700"></div>
@@ -243,8 +244,7 @@ const SignIn = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => console.log("Google login")}
-                className="w-full font-semibold py-4 rounded-lg flex items-center justify-center space-x-3 transition-colors shadow-lg bg-black text-white/80 cursor-pointer"
-                style={{ fontFamily: "Oxanium" }}
+                className="w-full font-semibold py-4 rounded-lg flex items-center justify-center space-x-3 transition-colors shadow-lg bg-black text-white/80 cursor-pointer text-base font-Oxanium"
               >
                 <svg className="w-6 h-6" viewBox="0 0 24 24">
                   <path
@@ -272,11 +272,11 @@ const SignIn = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.6 }}
-                className="text-center text-gray-400 text-base"
+                className="text-center text-gray-400 text-base font-Oxanium"
               >
                 Don't have an account?{" "}
                 <button
-                  onClick={() => console.log("Navigate to signup")}
+                  onClick={() => navigate("/signup")}
                   className="text-[#FF00FF] hover:text-pink-300 font-semibold transition-colors cursor-pointer"
                 >
                   Sign Up
@@ -292,24 +292,20 @@ const SignIn = () => {
               >
                 <button
                   onClick={() => console.log("Terms")}
-                  className="hover:text-gray-300 transition-colors"
-                  style={{ fontFamily: "Oxanium" }}
+                  className="hover:text-gray-300 transition-colors font-Oxanium cursor-pointer"
                 >
-                  Terms
+                  Terms <span className="mx-0.5">•</span>
                 </button>
-                <span>•</span>
+
                 <button
                   onClick={() => console.log("Privacy")}
-                  className="hover:text-gray-300 transition-colors"
-                  style={{ fontFamily: "Oxanium" }}
+                  className="hover:text-gray-300 transition-colors font-Oxanium cursor-pointer"
                 >
-                  Privacy
+                  Privacy <span className="mx-0.5">•</span>
                 </button>
-                <span>•</span>
                 <button
                   onClick={() => console.log("Support")}
-                  className="hover:text-gray-300 transition-colors"
-                  style={{ fontFamily: "Oxanium" }}
+                  className="hover:text-gray-300 transition-colors font-Oxanium cursor-pointer"
                 >
                   Support
                 </button>

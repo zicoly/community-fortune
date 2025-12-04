@@ -54,16 +54,16 @@ export const validateLoginForm = (formData) => {
 export const validateSignupForm = (formData) => {
   const errors = [];
 
-  if (!formData.username || !formData.username.trim()) {
+  if (!formData.firstName || !formData.firstName.trim()) {
     errors.push({
-      field: "username",
-      message: "Please enter a username",
+      field: "firstName",
+      message: "Please enter your firstName",
     });
-  } else if (!validateUsername(formData.username)) {
+  }
+  if (!formData.lastName || !formData.lastName.trim()) {
     errors.push({
-      field: "username",
-      message:
-        "Username must be 3-20 characters (letters, numbers, underscore)",
+      field: "lastName",
+      message: "Please enter your lastName",
     });
   }
 
@@ -100,6 +100,13 @@ export const validateSignupForm = (formData) => {
     errors.push({
       field: "confirmPassword",
       message: "Passwords do not match",
+    });
+  }
+
+  if (!formData.ageConfirm) {
+    errors.push({
+      field: "ageConfirm",
+      message: "You must be 18 years or older",
     });
   }
 
