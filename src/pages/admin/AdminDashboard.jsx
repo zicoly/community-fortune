@@ -116,8 +116,7 @@ const AdminDashboard = () => {
         <div className="flex-1 overflow-y-auto p-8 space-y-8 relative custom-scrollbar z-10">
           <img
             src="/assets/images/Admin_bg.png"
-            className="absolute inset-0 w-full h-fit object-cover opacity-20 pointer-events-none z-0"
-            alt=""
+            className="fixed w-full h-fit object-cover opacity-30 pointer-events-none z-0"
           />
 
           <motion.div
