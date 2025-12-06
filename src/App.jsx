@@ -8,6 +8,9 @@ import Kyc from "./pages/admin/Kyc";
 import Competitions from "./pages/admin/Competitions";
 import SuperAdminManagement from "./pages/admin/SuperAdminManagement";
 import AdminSettings from "./pages/admin/AdminSettings";
+import ForgotPassword from "./pages/auth/forgot-password/ForgotPassword";
+import ResetPassword from "./pages/auth/reset-password/ResetPassword";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/test" element={<Test />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         {/* Add more routes */}
         <Route path="/admin" element={<AdminDashboardWrapper />} />
 
