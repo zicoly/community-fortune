@@ -28,10 +28,15 @@ const ResetPassword = () => {
   if (showSuccess) {
     return (
       <main
-        className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-4"
+        className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-4 relative overflow-hidden"
         style={{
-          backgroundImage: `url(${ForgotPassWordBG})`,
-          background: `linear-gradient(90deg, rgba(25, 17, 56, 0.5) 0%, rgba(45, 6, 57, 0.5) 25%, rgba(82, 1, 82, 0.5) 50%, rgba(47, 0, 47, 0.5) 80%), linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ForgotPassWordBG})`,
+          backgroundImage: `
+            linear-gradient(90deg, rgba(25, 17, 56, 0.8) 0%, rgba(45, 6, 57, 0.8) 25%, rgba(82, 1, 82, 0.8) 50%, rgba(47, 0, 47, 0.8) 80%),
+            url(${ForgotPassWordBG})
+          `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="w-full max-w-lg">
@@ -109,8 +114,13 @@ const ResetPassword = () => {
     <main
       className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-4 relative overflow-hidden"
       style={{
-        backgroundImage: `url(${ForgotPassWordBG})`,
-        background: `linear-gradient(90deg, rgba(25, 17, 56, 0.5) 0%, rgba(45, 6, 57, 0.5) 25%, rgba(82, 1, 82, 0.5) 50%, rgba(47, 0, 47, 0.5) 80%), linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ForgotPassWordBG})`,
+        backgroundImage: `
+          linear-gradient(90deg, rgba(25, 17, 56, 0.8) 0%, rgba(45, 6, 57, 0.8) 25%, rgba(82, 1, 82, 0.8) 50%, rgba(47, 0, 47, 0.8) 80%),
+          url(${ForgotPassWordBG})
+        `,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="w-full max-w-7xl flex gap-12 items-center justify-center">
