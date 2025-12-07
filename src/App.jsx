@@ -13,6 +13,7 @@ import ResetPassword from "./pages/auth/reset-password/ResetPassword";
 import Test from "./pages/Test";
 import OTP from "./pages/auth/OTP";
 import KYC from "./pages/auth/KYC";
+import KYCUnderReview from "./pages/auth/KYCUnderReview";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/verify-account" element={<OTP />} />
         <Route path="/kyc-verification" element={<KYC />} />
+        <Route path="/kyc/under-review" element={<KYCUnderReview />} />
         {/* Add more routes */}
         <Route path="/admin" element={<AdminDashboardWrapper />} />
 
