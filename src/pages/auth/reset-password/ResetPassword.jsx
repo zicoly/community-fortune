@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ForgotPassWordBG from "/assets/images/fpBG.jpg";
 import CasinoCards from "/assets/images/casinoCards.png";
+import Envelope from "/assets/icons/EnvelopeSimple.svg";
 import Logo from "/assets/icons/Polygon1.svg";
 
 const ResetPassword = () => {
@@ -28,34 +29,64 @@ const ResetPassword = () => {
     return (
       <main
         className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-4"
-        style={{ backgroundImage: `url(${ForgotPassWordBG})` }}
+        style={{
+          backgroundImage: `url(${ForgotPassWordBG})`,
+          background: `linear-gradient(90deg, rgba(25, 17, 56, 0.5) 0%, rgba(45, 6, 57, 0.5) 25%, rgba(82, 1, 82, 0.5) 50%, rgba(47, 0, 47, 0.5) 80%), linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ForgotPassWordBG})`,
+        }}
       >
         <div className="w-full max-w-lg">
-          <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-3xl p-12 border border-gray-700/50 shadow-2xl">
+          <div
+            className="rounded-2xl p-12"
+            style={{
+              background: `linear-gradient(21.31deg, rgba(0, 255, 255, 0.3) 28.08%, rgba(255, 0, 255, 0.3) 71.94%), linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))`,
+              backdropFilter: "blur(16px)",
+            }}
+          >
             {/* Logo/Header */}
             <div className="flex items-center justify-center gap-3 mb-12">
               <img src={Logo} alt="Logo" className="w-8 h-8" />
-              <h1 className="text-white text-2xl font-Orbitron font-medium tracking-wide">
+              <h1
+                className="text-white text-2xl font-Orbitron font-medium tracking-wide"
+                style={{
+                  textShadow: "0px 4px 24px rgba(255, 0, 255, 0.5)",
+                }}
+              >
                 Community Fortune
               </h1>
             </div>
 
             {/* Success Icon */}
             <div className="flex justify-center mb-8">
-              <div className="w-32 h-32 bg-linear-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center shadow-lg shadow-green-500/50">
-                <svg
-                  className="w-16 h-16 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <div className="relative">
+                <div
+                  className="absolute inset-0 rounded-full blur-xl opacity-40"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, #008000 0%, #001A00 100%)",
+                  }}
+                ></div>
+                <div
+                  className="relative w-32 h-32 rounded-full flex items-center justify-center"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, #008000 0%, #001A00 100%)",
+                    boxShadow: "0px 4px 24px 0px rgba(0, 255, 0, 0.3)",
+                  }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={3}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                  <svg
+                    className="w-16 h-16 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={3}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
 
@@ -76,17 +107,31 @@ const ResetPassword = () => {
 
   return (
     <main
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-4"
-      style={{ backgroundImage: `url(${ForgotPassWordBG})` }}
+      className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-4 relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${ForgotPassWordBG})`,
+        background: `linear-gradient(90deg, rgba(25, 17, 56, 0.5) 0%, rgba(45, 6, 57, 0.5) 25%, rgba(82, 1, 82, 0.5) 50%, rgba(47, 0, 47, 0.5) 80%), linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ForgotPassWordBG})`,
+      }}
     >
-      <div className="w-full max-w-7xl flex gap-8 items-center">
+      <div className="w-full max-w-7xl flex gap-12 items-center justify-center">
         {/* Left Side - Form */}
-        <div className="w-full lg:w-1/2">
-          <div className="bg-linear-to-br from-gray-900/80 to-gray-800/70 backdrop-blur-md rounded-3xl p-8 border border-gray-700/50 shadow-2xl max-w-md mx-auto">
+        <div className="w-full lg:w-auto shrink-0">
+          <div
+            className="rounded-2xl p-8 max-w-md"
+            style={{
+              background: `linear-gradient(21.31deg, rgba(0, 255, 255, 0.3) 28.08%, rgba(255, 0, 255, 0.3) 71.94%), linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))`,
+              backdropFilter: "blur(16px)",
+            }}
+          >
             {/* Logo/Header */}
             <div className="flex items-center gap-3 mb-8">
               <img src={Logo} alt="Logo" className="w-8 h-8" />
-              <h1 className="text-white text-xl font-Orbitron font-medium tracking-wide">
+              <h1
+                className="text-white text-xl font-Orbitron font-medium tracking-wide"
+                style={{
+                  textShadow: "0px 4px 24px rgba(255, 0, 255, 0.5)",
+                }}
+              >
                 Community Fortune
               </h1>
             </div>
@@ -94,21 +139,22 @@ const ResetPassword = () => {
             {/* Icon */}
             <div className="flex justify-center mb-6">
               <div className="relative">
-                <div className="absolute inset-0 bg-linear-to-r from-purple-600 to-pink-500 rounded-full blur-xl opacity-50"></div>
-                <div className="relative w-20 h-20 bg-linear-to-br from-fuchsia-500 to-purple-600 rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-10 h-10 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
+                <div
+                  className="absolute inset-0 rounded-full blur-xl opacity-50"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #00FFFF 0%, #FF00FF 100%)",
+                  }}
+                ></div>
+                <div
+                  className="relative w-20 h-20 rounded-full flex items-center justify-center"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #FF00FF 0%, #590059 100%)",
+                    boxShadow: "0px 4px 24px 0px rgba(0, 255, 255, 0.5)",
+                  }}
+                >
+                  <img src={Envelope} alt="Envelope" className="w-10 h-10" />
                 </div>
               </div>
             </div>
@@ -131,7 +177,7 @@ const ResetPassword = () => {
                 Password <span className="text-red-500">*</span>
               </label>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
                   <svg
                     className="w-5 h-5 text-gray-500"
                     fill="none"
@@ -151,11 +197,16 @@ const ResetPassword = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
-                  className="w-full bg-gray-900/60 border border-gray-700 rounded-lg pl-12 pr-12 py-3 text-gray-300 font-Oxanium placeholder-gray-600 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full rounded-lg pl-12 pr-12 py-3 text-gray-300 font-Oxanium placeholder-gray-600 focus:outline-none transition-colors"
+                  style={{
+                    background: "#000000",
+                    border: "0.5px solid rgba(0, 255, 255, 0.25)",
+                    boxShadow: "0px 2px 12px 0px rgba(0, 255, 255, 0.1)",
+                  }}
                 />
                 <button
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors z-10"
                 >
                   {showPassword ? (
                     <svg
@@ -202,7 +253,7 @@ const ResetPassword = () => {
                 Confirm Password <span className="text-red-500">*</span>
               </label>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
                   <svg
                     className="w-5 h-5 text-gray-500"
                     fill="none"
@@ -222,11 +273,16 @@ const ResetPassword = () => {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Re-enter your password"
-                  className="w-full bg-gray-900/60 border border-gray-700 rounded-lg pl-12 pr-12 py-3 text-gray-300 font-Oxanium placeholder-gray-600 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full rounded-lg pl-12 pr-12 py-3 text-gray-300 font-Oxanium placeholder-gray-600 focus:outline-none transition-colors"
+                  style={{
+                    background: "#000000",
+                    border: "0.5px solid rgba(0, 255, 255, 0.25)",
+                    boxShadow: "0px 2px 12px 0px rgba(0, 255, 255, 0.1)",
+                  }}
                 />
                 <button
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors z-10"
                 >
                   {showConfirmPassword ? (
                     <svg
@@ -270,7 +326,12 @@ const ResetPassword = () => {
             {/* Submit Button */}
             <button
               onClick={handleSubmit}
-              className="w-full bg-linear-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 text-white font-Orbitron font-bold text-sm py-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-fuchsia-500/50"
+              className="w-full text-white font-Orbitron font-bold text-sm py-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+              style={{
+                background:
+                  "linear-gradient(90.63deg, #FF00FF -0.01%, #3E003E 99.99%)",
+                boxShadow: "0px 4px 24px 0px rgba(0, 0, 0, 0.25)",
+              }}
             >
               CONFIRM
             </button>
@@ -278,12 +339,15 @@ const ResetPassword = () => {
         </div>
 
         {/* Right Side - Casino Cards Image */}
-        <div className="hidden lg:block lg:w-1/2">
+        <div className="hidden lg:block shrink-0">
           <div className="flex items-center justify-center">
             <img
               src={CasinoCards}
               alt="Casino Cards"
-              className="w-full max-w-2xl h-auto object-contain drop-shadow-2xl"
+              className="w-[600px] h-auto object-contain drop-shadow-2xl"
+              style={{
+                filter: "drop-shadow(0px 10px 40px rgba(255, 0, 255, 0.3))",
+              }}
             />
           </div>
         </div>
