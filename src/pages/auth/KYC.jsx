@@ -38,7 +38,7 @@ const KYC = () => {
       style={{ backgroundImage: `url(${CasinoGuard})` }}
     >
       {/* Header */}
-      <div className="w-full bg-gradient-to-b from-gray-900/95 to-gray-900/60 backdrop-blur-sm py-4">
+      <div className="w-full bg-linear-to-b from-gray-900/95 to-gray-900/60 backdrop-blur-sm py-4">
         <div className="flex items-center justify-center gap-3">
           <img src={Logo} alt="Logo" className="w-8 h-8" />
           <h1 className="text-white text-2xl font-Orbitron font-medium tracking-wide">
@@ -59,7 +59,7 @@ const KYC = () => {
           </div>
 
           {/* Progress Line 1 */}
-          <div className="absolute top-6 left-[12.5%] right-[62.5%] h-1 bg-gradient-to-r from-green-600 to-green-600"></div>
+          <div className="absolute top-6 left-[12.5%] right-[62.5%] h-1 bg-linear-to-r from-green-600 to-green-600"></div>
 
           {/* Step 2 - Email */}
           <div className="flex flex-col items-center z-10">
@@ -70,11 +70,11 @@ const KYC = () => {
           </div>
 
           {/* Progress Line 2 */}
-          <div className="absolute top-6 left-[37.5%] right-[37.5%] h-1 bg-gradient-to-r from-green-600 to-fuchsia-500"></div>
+          <div className="absolute top-6 left-[37.5%] right-[37.5%] h-1 bg-linear-to-r from-green-600 to-fuchsia-500"></div>
 
           {/* Step 3 - Identity (Active) */}
           <div className="flex flex-col items-center z-10">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-fuchsia-500 to-pink-500 flex items-center justify-center mb-2 shadow-lg shadow-fuchsia-500/50">
+            <div className="w-12 h-12 rounded-full bg-linear-to-br from-fuchsia-500 to-pink-500 flex items-center justify-center mb-2 shadow-lg shadow-fuchsia-500/50">
               <span className="text-white font-Orbitron font-bold text-lg">
                 3
               </span>
@@ -113,7 +113,7 @@ const KYC = () => {
             </div>
 
             {/* Why We Need This */}
-            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
+            <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
               <div className="flex items-center gap-3 mb-4">
                 <Shield className="w-6 h-6 text-red-500" />
                 <h3 className="text-white font-Orbitron font-semibold text-lg">
@@ -122,25 +122,25 @@ const KYC = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
                   <span className="text-gray-300 font-Oxanium text-sm">
                     Protect your account from fraud
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
                   <span className="text-gray-300 font-Oxanium text-sm">
                     Comply with legal requirements
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
                   <span className="text-gray-300 font-Oxanium text-sm">
                     Ensure you're 18+ for prize eligibility
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
                   <span className="text-gray-300 font-Oxanium text-sm">
                     Verify prize delivery address
                   </span>
@@ -155,7 +155,7 @@ const KYC = () => {
             </div>
 
             {/* What We Accept */}
-            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
+            <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
               <h3 className="text-white font-Orbitron font-semibold text-lg mb-4">
                 What We Accept
               </h3>
@@ -223,7 +223,7 @@ const KYC = () => {
             </div>
 
             {/* Document Requirements */}
-            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
+            <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl">📄</span>
                 <h3 className="text-white font-Orbitron font-semibold text-lg">
@@ -239,7 +239,7 @@ const KYC = () => {
             </div>
 
             {/* Photo Requirements */}
-            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
+            <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl">📸</span>
                 <h3 className="text-white font-Orbitron font-semibold text-lg">
@@ -258,7 +258,7 @@ const KYC = () => {
           {/* Right Column */}
           <div className="space-y-6">
             {/* Upload ID Document */}
-            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
+            <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
               <h3 className="text-white font-Orbitron font-semibold text-lg mb-4">
                 Upload ID Document
               </h3>
@@ -285,7 +285,7 @@ const KYC = () => {
             </div>
 
             {/* Upload Selfie */}
-            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
+            <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
               <h3 className="text-white font-Orbitron font-semibold text-lg mb-4">
                 Upload Selfie
               </h3>
@@ -312,7 +312,7 @@ const KYC = () => {
             </div>
 
             {/* Tips for taking good photos */}
-            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
+            <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-2xl p-6 border border-gray-700/50">
               <h3 className="text-white font-Orbitron font-semibold text-lg mb-4">
                 Tips for taking good photos:
               </h3>
@@ -334,7 +334,7 @@ const KYC = () => {
             <button
               onClick={handleSubmit}
               disabled={!idDocument || !selfie}
-              className="w-full bg-gradient-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed text-white font-Orbitron font-bold text-base py-5 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-fuchsia-500/50 disabled:shadow-none"
+              className="w-full bg-linear-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed text-white font-Orbitron font-bold text-base py-5 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-fuchsia-500/50 disabled:shadow-none"
             >
               SUBMIT FOR VERIFICATION
             </button>

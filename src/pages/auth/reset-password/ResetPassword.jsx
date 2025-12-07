@@ -31,7 +31,7 @@ const ResetPassword = () => {
         style={{ backgroundImage: `url(${ForgotPassWordBG})` }}
       >
         <div className="w-full max-w-lg">
-          <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-3xl p-12 border border-gray-700/50 shadow-2xl">
+          <div className="bg-linear-to-br from-gray-900/90 to-gray-800/80 backdrop-blur-md rounded-3xl p-12 border border-gray-700/50 shadow-2xl">
             {/* Logo/Header */}
             <div className="flex items-center justify-center gap-3 mb-12">
               <img src={Logo} alt="Logo" className="w-8 h-8" />
@@ -42,7 +42,7 @@ const ResetPassword = () => {
 
             {/* Success Icon */}
             <div className="flex justify-center mb-8">
-              <div className="w-32 h-32 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center shadow-lg shadow-green-500/50">
+              <div className="w-32 h-32 bg-linear-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center shadow-lg shadow-green-500/50">
                 <svg
                   className="w-16 h-16 text-white"
                   fill="none"
@@ -82,7 +82,7 @@ const ResetPassword = () => {
       <div className="w-full max-w-7xl flex gap-8 items-center">
         {/* Left Side - Form */}
         <div className="w-full lg:w-1/2">
-          <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/70 backdrop-blur-md rounded-3xl p-8 border border-gray-700/50 shadow-2xl max-w-md mx-auto">
+          <div className="bg-linear-to-br from-gray-900/80 to-gray-800/70 backdrop-blur-md rounded-3xl p-8 border border-gray-700/50 shadow-2xl max-w-md mx-auto">
             {/* Logo/Header */}
             <div className="flex items-center gap-3 mb-8">
               <img src={Logo} alt="Logo" className="w-8 h-8" />
@@ -94,8 +94,8 @@ const ResetPassword = () => {
             {/* Icon */}
             <div className="flex justify-center mb-6">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full blur-xl opacity-50"></div>
-                <div className="relative w-20 h-20 bg-gradient-to-br from-fuchsia-500 to-purple-600 rounded-full flex items-center justify-center">
+                <div className="absolute inset-0 bg-linear-to-r from-purple-600 to-pink-500 rounded-full blur-xl opacity-50"></div>
+                <div className="relative w-20 h-20 bg-linear-to-br from-fuchsia-500 to-purple-600 rounded-full flex items-center justify-center">
                   <svg
                     className="w-10 h-10 text-white"
                     fill="none"
@@ -270,7 +270,7 @@ const ResetPassword = () => {
             {/* Submit Button */}
             <button
               onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 text-white font-Orbitron font-bold text-sm py-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-fuchsia-500/50"
+              className="w-full bg-linear-to-r from-fuchsia-500 to-pink-500 hover:from-fuchsia-600 hover:to-pink-600 text-white font-Orbitron font-bold text-sm py-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-fuchsia-500/50"
             >
               CONFIRM
             </button>
