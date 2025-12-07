@@ -1,0 +1,119 @@
+---General Information---
+
+Base Path: `/api/`
+Deprecation Policy: Endpoints deprecated 6 months before removal
+Version Header: `Accept: application/vnd.api.v1+json`
+Support: [api-support@example.com](mailto:api-support@example.com)
+
+---Quick Reference---
+
+| Category              | Endpoints    | Auth Required | Rate Limit  |
+| --------------------- | ------------ | ------------- | ----------- |
+| 🔐 Authentication     | 8 endpoints  | Mixed         | 5-10/hour   |
+| 👥 User Management    | 15 endpoints | Mostly Yes    | 3-10/day    |
+| 🆔 KYC & Verification | 5 endpoints  | Yes           | 3/hour      |
+| 🤝 Referral System    | 6 endpoints  | Yes           | 1-10/hour   |
+| 💰 Withdrawals        | 8 endpoints  | Yes           | 5/hour      |
+| 🏦 Wallet Management  | 10 endpoints | Yes           | 10/hour     |
+| 🏆 Competitions       | 12 endpoints | Mixed         | 3-100/15min |
+| 👨‍💼 Admin              | 15 endpoints | Admin Only    | 10-50/hour  |
+| 🌐 Webhooks           | 4 endpoints  | Signature     | 1000/hour   |
+
+---Common Status Code---
+
+| Code  | Description      | Typical Response                                 |
+| ----- | ---------------- | ------------------------------------------------ |
+| `200` | Success          | `{ "success": true, "data": {} }`                |
+| `201` | Created          | `{ "success": true, "message": "", "data": {} }` |
+| `400` | Validation Error | Error object with field details                  |
+| `401` | Unauthorized     | Authentication required                          |
+| `403` | Forbidden        | Insufficient permissions                         |
+| `404` | Not Found        | Resource doesn't exist                           |
+| `429` | Rate Limited     | Try again later                                  |
+| `500` | Server Error     | Internal server error                            |
+
+---AUTHENTICATION & SECURITY---
+
+1. Login
+
+-Endpoint: `POST /api/users/login`
+-Authentication: None
+-Rate Limiting: 5 attempts per 15 minutes per IP
+-KYC Check: Yes
+
+@@@Request Body:
+
+```json
+{
+  "email": "user@example.com",
+  "password": "SecurePass123!",
+  "twoFactorCode": "123456" // for now optional
+}
+```
+
+@@@Success Response (200):
+
+```json
+{
+  "success": true,
+  "data": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "refreshToken": "refresh_token_123",
+    "expiresIn": 900,
+    "user": {
+      "id": "user_123",
+      "email": "user@example.com",
+      "username": "john_doe",
+      "role": "user",
+      "kycStatus": "verified",
+      "accountStatus": "active",
+      "isEmailVerified": true,
+      "is2FAEnabled": true,
+      "permissions": ["user:read", "user:write"]
+    }
+  }
+}
+```
+
+2. Register User
+
+-Endpoint: `POST /api/users/register`
+-Authentication: None
+-Rate Limiting: 3 attempts per hour per IP
+-Content-Type: `multipart/form-data`
+
+@@@Form Data:
+
+| Field                | Type    | Required | Validation                           |
+| -------------------- | ------- | -------- | ------------------------------------ |
+| `email`              | string  | Yes      | Valid email format                   |
+| `password`           | string  | Yes      | Min 8 chars, complexity              |
+| `username`           | string  | Yes      | 3-30 alphanumeric chars              |
+| `firstName`          | string  | Yes      | Max 50 chars                         |
+| `lastName`           | string  | Yes      | Max 50 chars                         |
+| `phone`              | string  | Yes      | Valid phone format                   |
+| `dateOfBirth`        | string  | Yes      | ISO date, 18+ years                  |
+| `country`            | string  | Yes      | ISO country code                     |
+| `governmentIdType`   | string  | Yes      | passport/drivers_license/national_id |
+| `governmentIdNumber` | string  | Yes      | Max 50 chars                         |
+| `governmentId`       | file    | Yes      | JPEG/PNG/PDF, 5MB max                |
+| `selfiePhoto`        | file    | Yes      | JPEG/PNG, 3MB max                    |
+| `acceptTerms`        | boolean | Yes      | Must be true                         |
+| `marketingEmails`    | boolean | No       | Default false                        |
+
+@@@Success Response (201):
+
+```json
+{
+  "success": true,
+  "message": "Registration submitted. KYC verification in progress.",
+  "data": {
+    "userId": "user_123",
+    "kycStatus": "pending",
+    "estimatedVerificationTime": "24-48 hours",
+    "accountAccess": "limited",
+    "emailVerificationRequired": true,
+    "nextSteps": ["verify_email", "complete_kyc"]
+  }
+}
+
