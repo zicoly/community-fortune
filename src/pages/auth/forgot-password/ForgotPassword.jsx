@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import ForgotPassWordBG from "/assets/images/fpBG.jpg";
 
 // Import SVGs
-import Envelope from '/assets/icons/EnvelopeSimple.svg';
-import EnvelopeInput from '/assets/icons/EnvelopeInput.svg';
-import DrFacilier from '/assets/images/dr-facilier.svg';
-import CasinoGirl from '/assets/images/3d-casino-girl.svg';
-import WhiteDie from '/assets/icons/whiteDie.svg';
-import PinkDie from '/assets/icons/pinkDie.svg';
-import Logo from '/assets/icons/Polygon1.svg';
+import Envelope from "/assets/icons/EnvelopeSimple.svg";
+import EnvelopeInput from "/assets/icons/EnvelopeInput.svg";
+import DrFacilier from "/assets/images/dr-facilier.svg";
+import CasinoGirl from "/assets/images/3d-casino-girl.svg";
+import WhiteDie from "/assets/icons/whiteDie.svg";
+import PinkDie from "/assets/icons/pinkDie.svg";
+import Logo from "/assets/icons/Polygon1.svg";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -33,58 +33,64 @@ const ForgotPassword = () => {
     <main
       className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center p-4 relative overflow-hidden"
       style={{
-        backgroundImage: `url(${ForgotPassWordBG})`,
-        background: `linear-gradient(90deg, rgba(25, 17, 56, 0.5) 0%, rgba(45, 6, 57, 0.5) 25%, rgba(82, 1, 82, 0.5) 50%, rgba(47, 0, 47, 0.5) 80%), linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ForgotPassWordBG})`
+        backgroundImage: `
+          linear-gradient(90deg, rgba(25, 17, 56, 0.8) 0%, rgba(45, 6, 57, 0.8) 25%, rgba(82, 1, 82, 0.8) 50%, rgba(47, 0, 47, 0.8) 80%),
+          url(${ForgotPassWordBG})
+        `,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Dice - Only show on first view */}
       {!showConfirmation && (
         <>
           {/* Pink Dice - Bottom Left (partially cut off) */}
-          <img 
-            src={PinkDie} 
-            alt="Pink Die" 
-            className="absolute -bottom-4 left-4 w-20 h-20 md:w-24 md:h-24"
-            style={{ transform: 'rotate(-15deg)' }}
+          <img
+            src={PinkDie}
+            alt="Pink Die"
+            className="absolute bottom-24 left-4 w-20 h-20 md:w-24 md:h-24 z-10"
+            style={{ transform: "rotate(-15deg)" }}
           />
-          
+
           {/* White Dice - Left side (near form) */}
-          <img 
-            src={WhiteDie} 
-            alt="White Die" 
-            className="absolute top-1/2 left-8 md:left-16 w-24 h-24 md:w-32 md:h-32 -translate-y-1/2"
-            style={{ transform: 'translateY(-50%) rotate(25deg)' }}
+          <img
+            src={WhiteDie}
+            alt="White Die"
+            className="absolute top-[65%] left-8 md:left-16 w-24 h-24 md:w-32 md:h-32 -translate-y-1/2 z-10"
+            style={{ transform: "translateY(-50%) rotate(25deg)" }}
           />
         </>
       )}
 
-      <div className="w-full max-w-6xl flex items-center justify-center relative">
+      <div className="w-full max-w-6xl flex items-center justify-center relative z-20">
         {/* Casino Girl - Left Side (only on confirmation view, lg+ screens) */}
         {showConfirmation && (
-          <div className="hidden lg:block absolute left-0 bottom-0 -mb-4">
-            <img 
-              src={CasinoGirl} 
-              alt="Casino Girl" 
+          <div className="hidden lg:block absolute left-0 bottom-0 -mb-4 z-10">
+            <img
+              src={CasinoGirl}
+              alt="Casino Girl"
               className="w-56 xl:w-72 h-auto"
             />
           </div>
         )}
 
         {/* Card Container */}
-        <div 
-          className="w-full max-w-md rounded-2xl p-8 relative z-10"
+        <div
+          className="w-full max-w-md rounded-2xl p-8 relative z-20"
           style={{
             background: `linear-gradient(21.31deg, rgba(0, 255, 255, 0.3) 28.08%, rgba(255, 0, 255, 0.3) 71.94%), linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))`,
-            backdropFilter: 'blur(16px)'
+            backdropFilter: "blur(16px)",
           }}
         >
           {/* Logo/Header */}
           <div className="flex items-center justify-center gap-3 mb-8">
             <img src={Logo} alt="Logo" className="w-8 h-8" />
-            <h1 
+            <h1
               className="text-white text-2xl font-Orbitron font-medium tracking-wide"
               style={{
-                textShadow: '0px 4px 24px rgba(255, 0, 255, 0.5)'
+                textShadow: "0px 4px 24px rgba(255, 0, 255, 0.5)",
               }}
             >
               Community Fortune
@@ -96,17 +102,19 @@ const ForgotPassword = () => {
               {/* Icon */}
               <div className="flex justify-center mb-6">
                 <div className="relative">
-                  <div 
+                  <div
                     className="absolute inset-0 rounded-full blur-xl opacity-50"
                     style={{
-                      background: 'linear-gradient(135deg, #00FFFF 0%, #FF00FF 100%)'
+                      background:
+                        "linear-gradient(135deg, #00FFFF 0%, #FF00FF 100%)",
                     }}
                   ></div>
-                  <div 
+                  <div
                     className="relative w-20 h-20 rounded-full flex items-center justify-center"
                     style={{
-                      background: 'linear-gradient(135deg, #FF00FF 0%, #590059 100%)',
-                      boxShadow: '0px 4px 24px 0px rgba(0, 255, 255, 0.5)'
+                      background:
+                        "linear-gradient(135deg, #FF00FF 0%, #590059 100%)",
+                      boxShadow: "0px 4px 24px 0px rgba(0, 255, 255, 0.5)",
                     }}
                   >
                     <img src={Envelope} alt="Envelope" className="w-10 h-10" />
@@ -133,7 +141,8 @@ const ForgotPassword = () => {
 
               {/* Description */}
               <p className="text-gray-400 text-center font-Oxanium text-sm mb-6">
-                Enter your email address and we'll send you a link to reset your password
+                Enter your email address and we'll send you a link to reset your
+                password
               </p>
 
               {/* Email Input */}
@@ -143,7 +152,11 @@ const ForgotPassword = () => {
                 </label>
                 <div className="relative">
                   <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
-                    <img src={EnvelopeInput} alt="Email Icon" className="w-5 h-5" />
+                    <img
+                      src={EnvelopeInput}
+                      alt="Email Icon"
+                      className="w-5 h-5"
+                    />
                   </div>
                   <input
                     type="email"
@@ -152,9 +165,9 @@ const ForgotPassword = () => {
                     placeholder="john.smith@example.com"
                     className="w-full rounded-lg px-12 py-3 text-gray-300 font-Oxanium placeholder-gray-600 focus:outline-none transition-colors"
                     style={{
-                      background: '#000000',
-                      border: '0.5px solid rgba(0, 255, 255, 0.25)',
-                      boxShadow: '0px 2px 12px 0px rgba(0, 255, 255, 0.1)'
+                      background: "#000000",
+                      border: "0.5px solid rgba(0, 255, 255, 0.25)",
+                      boxShadow: "0px 2px 12px 0px rgba(0, 255, 255, 0.1)",
                     }}
                   />
                 </div>
@@ -165,8 +178,9 @@ const ForgotPassword = () => {
                 onClick={handleSubmit}
                 className="w-full text-white font-Orbitron font-bold text-sm py-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] mb-4"
                 style={{
-                  background: 'linear-gradient(90.63deg, #FF00FF -0.01%, #3E003E 99.99%)',
-                  boxShadow: '0px 4px 24px 0px rgba(0, 0, 0, 0.25)'
+                  background:
+                    "linear-gradient(90.63deg, #FF00FF -0.01%, #3E003E 99.99%)",
+                  boxShadow: "0px 4px 24px 0px rgba(0, 0, 0, 0.25)",
                 }}
               >
                 SEND RESET LINK
@@ -177,8 +191,8 @@ const ForgotPassword = () => {
                 onClick={handleBackToLogin}
                 className="w-full text-white font-Oxanium text-sm flex items-center justify-center gap-2 py-3 rounded-lg transition-all duration-200"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.25)',
-                  border: '1.2px solid rgba(0, 255, 255, 0.05)'
+                  background: "rgba(0, 0, 0, 0.25)",
+                  border: "1.2px solid rgba(0, 255, 255, 0.05)",
                 }}
               >
                 <svg
@@ -203,17 +217,19 @@ const ForgotPassword = () => {
               {/* Icon */}
               <div className="flex justify-center mb-6">
                 <div className="relative">
-                  <div 
+                  <div
                     className="absolute inset-0 rounded-full blur-xl opacity-50"
                     style={{
-                      background: 'linear-gradient(135deg, #00FFFF 0%, #FF00FF 100%)'
+                      background:
+                        "linear-gradient(135deg, #00FFFF 0%, #FF00FF 100%)",
                     }}
                   ></div>
-                  <div 
+                  <div
                     className="relative w-20 h-20 rounded-full flex items-center justify-center"
                     style={{
-                      background: 'linear-gradient(135deg, #FF00FF 0%, #590059 100%)',
-                      boxShadow: '0px 4px 24px 0px rgba(0, 255, 255, 0.5)'
+                      background:
+                        "linear-gradient(135deg, #FF00FF 0%, #590059 100%)",
+                      boxShadow: "0px 4px 24px 0px rgba(0, 255, 255, 0.5)",
                     }}
                   >
                     <img src={Envelope} alt="Envelope" className="w-10 h-10" />
@@ -238,11 +254,11 @@ const ForgotPassword = () => {
               </p>
 
               {/* Pro Tip */}
-              <div 
+              <div
                 className="rounded-lg p-4 mb-6"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.4)',
-                  border: '0.5px solid rgba(0, 255, 255, 0.2)'
+                  background: "rgba(0, 0, 0, 0.4)",
+                  border: "0.5px solid rgba(0, 255, 255, 0.2)",
                 }}
               >
                 <div className="flex gap-3">
@@ -264,7 +280,8 @@ const ForgotPassword = () => {
                       Pro tip:
                     </p>
                     <p className="text-gray-400 font-Oxanium text-sm">
-                      Check your spam folder if you don't see the email within a few minutes.
+                      Check your spam folder if you don't see the email within a
+                      few minutes.
                     </p>
                   </div>
                 </div>
@@ -280,8 +297,9 @@ const ForgotPassword = () => {
                 onClick={handleResendEmail}
                 className="w-full text-white font-Orbitron font-bold text-sm py-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] mb-4"
                 style={{
-                  background: 'linear-gradient(90.63deg, #FF00FF -0.01%, #3E003E 99.99%)',
-                  boxShadow: '0px 4px 24px 0px rgba(0, 0, 0, 0.25)'
+                  background:
+                    "linear-gradient(90.63deg, #FF00FF -0.01%, #3E003E 99.99%)",
+                  boxShadow: "0px 4px 24px 0px rgba(0, 0, 0, 0.25)",
                 }}
               >
                 RESEND EMAIL
@@ -292,8 +310,8 @@ const ForgotPassword = () => {
                 onClick={handleBackToLogin}
                 className="w-full text-white font-Oxanium text-sm flex items-center justify-center gap-2 py-3 rounded-lg transition-all duration-200"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.25)',
-                  border: '1.2px solid rgba(0, 255, 255, 0.05)'
+                  background: "rgba(0, 0, 0, 0.25)",
+                  border: "1.2px solid rgba(0, 255, 255, 0.05)",
                 }}
               >
                 <svg
@@ -317,10 +335,10 @@ const ForgotPassword = () => {
 
         {/* Dr Facilier - Right Side (only on first view, md+ screens) */}
         {!showConfirmation && (
-          <div className="hidden md:block absolute right-0 bottom-0 -mb-4">
-            <img 
-              src={DrFacilier} 
-              alt="Dr Facilier" 
+          <div className="hidden md:block absolute right-0 bottom-0 -mb-4 z-10">
+            <img
+              src={DrFacilier}
+              alt="Dr Facilier"
               className="w-64 lg:w-80 xl:w-96 h-auto"
             />
           </div>
