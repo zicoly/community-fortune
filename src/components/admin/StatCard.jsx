@@ -1,50 +1,88 @@
 import { motion } from "framer-motion";
 
 const StatCard = ({
-  icon,
+  icon: Icon,
   title,
   value,
   subtitle,
   color = "purple",
+  center,
+  padding,
+  valueColor = "text-white",
+  subtitleColor = "text-gray-500",
   delay = 0,
 }) => {
   const colorClasses = {
-    purple: "from-purple-500 to-pink-500",
-    blue: "from-blue-500 to-cyan-500",
-    green: "from-green-500 to-emerald-500",
-    orange: "from-orange-500 to-yellow-500",
-    red: "from-red-500 to-pink-500",
+    purple: "from-[#FF00FF] to-[#590059]",
+    blue: "from-[#00FFFF] to-[#009999]",
+    green: "from-[#008000] to-[#001A00]",
+    orange: "from-[#FFA500] to-[#996300]",
+    red: "from-[#3F1010] to-[#A52A2A]",
+    gray: "from-[#808080] to-[#1A1A1A]",
+    yellow: "from-yellow-500 to-orange-500",
   };
 
   return (
     <motion.div
-      initial={{ scale: 0, opacity: 0 }}
+      initial={{ scale: 0.9, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay, type: "spring" }}
-      whileHover={{ scale: 1.05, y: -5 }}
-      className="bg-[#000000CC] border-[0.5px] border-[#FF00FF] border-opacity-30 rounded-xl p-6 relative overflow-hidden"
+      transition={{ type: "spring" }}
+      whileHover={{ scale: 1.03, y: -4 }}
+      className={`bg-linear-to-t from-[#FF00FF] to-[#00FFFF] relative ${
+        padding ? "py-6 px-5" : "py-10"
+      } rounded-2xl`}
+      style={{ boxShadow: "0px 4px 16px 0px rgba(255, 255, 255, 0.05)" }}
     >
-      {/* Background Gradient */}
-      <div
-        className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${colorClasses[color]} opacity-10 rounded-full blur-3xl`}
-      />
-
-      <div className="relative z-10">
-        {/* Icon */}
+      <div className="absolute bg-black/95 z-10 inset-0 rounded-2xl border-[0.5px] border-[#FF00FF]/10" />
+      {/* Inner Card */}
+      <div className=" rounded-xl p-5 overflow-hidden">
+        {/* Glow Blob */}
         <div
-          className={`w-12 h-12 bg-linear-to-br ${colorClasses[color]} rounded-lg flex items-center justify-center text-2xl mb-4`}
+          className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${colorClasses[color]} opacity-10 blur-2xl`}
+        ></div>
+
+        <div
+          className={`relative z-10 ${
+            center
+              ? "flex flex-col items-center justify-center text-center"
+              : ""
+          }`}
         >
-          {icon}
+          {/* Icon */}
+          <div
+            className={`${
+              padding ? "w-12 h-12" : "w-16 h-16"
+            } rounded-2xl bg-linear-to-br ${
+              colorClasses[color]
+            } flex items-center justify-center text-white text-2xl mb-6`}
+          >
+            <Icon
+              color="white"
+              className={`${padding ? "size-6" : "size-10"}`}
+            />
+          </div>
+
+          {/* Value */}
+          <div
+            className={`${padding ? "text-2xl" : "text-base"} font-semibold font-Oxanium leading-normal tracking-wider ${valueColor}`}
+          >
+            {value}
+          </div>
+
+          {/* Title */}
+          <div className={`${padding ? "text-white" : "text-white/90"} text-sm font-semibold font-Oxanium leading-normal tracking-wider mt-3`}>
+            {title}
+          </div>
+
+          {/* Subtitle */}
+          {subtitle && (
+            <div
+              className={`text-sm font-normal mt-1 font-Oxanium leading-normal tracking-wider ${subtitleColor}`}
+            >
+              {subtitle}
+            </div>
+          )}
         </div>
-
-        {/* Title */}
-        <div className="text-gray-400 text-sm font-semibold mb-2">{title}</div>
-
-        {/* Value */}
-        <div className="text-white text-3xl font-black mb-1">{value}</div>
-
-        {/* Subtitle */}
-        {subtitle && <div className="text-gray-500 text-xs">{subtitle}</div>}
       </div>
     </motion.div>
   );

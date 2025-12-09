@@ -1,18 +1,9 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import SuperAdminDashboard from "../pages/admin/SuperAdminDashboard";
-import AdminDashboard from "../pages/admin/AdminDashboard";
 import { useSearchParams } from "react-router-dom";
+import UnifiedDashboard from "../pages/admin/UnifiedDashboard";
 
-// Wrapper component to determine which dashboard to show
 export const AdminDashboardWrapper = () => {
   const [searchParams] = useSearchParams();
-  const role = searchParams.get("role");
+  const role = searchParams.get("role") || "admin";
 
-  // If role is super-admin, show SuperAdminDashboard
-  // Otherwise, show AdminDashboard
-  if (role === "super-admin") {
-    return <SuperAdminDashboard />;
-  }
-
-  return <AdminDashboard />;
+  return <UnifiedDashboard role={role} />;
 };

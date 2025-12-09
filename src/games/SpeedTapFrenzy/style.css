@@ -1,0 +1,33 @@
+.tap-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.tap-start-btn {
+  padding: 12px 20px;
+  background: #8b5cf6;
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.tap-timer {
+  font-size: 24px;
+  color: #ffea00;
+}
+
+.tap-score {
+  font-size: 20px;
+  color: #00eaff;
+}
+
+.tap-btn {
+  margin-top: 40px;
+  padding: 25px 40px;
+  background: #ff00ff;
+  color: white;
+  border-radius: 50%;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+}

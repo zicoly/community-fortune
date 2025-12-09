@@ -1,0 +1,56 @@
+.gamehub-container {
+  padding: 30px;
+  text-align: center;
+}
+
+.gamehub-title {
+  font-size: 28px;
+  color: #00eaff;
+  margin-bottom: 20px;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.game-card {
+  background: #140022;
+  padding: 16px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 12px #4f0099;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+.game-thumb {
+  width: 100%;
+  height: 120px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.thumb-pacman {
+  background: radial-gradient(circle, #ffeb00 0%, #b38c00 100%);
+}
+
+.thumb-tap {
+  background: radial-gradient(circle, #ff00d4 0%, #520052 100%);
+}
+
+.game-name {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.game-desc {
+  font-size: 14px;
+  color: #bbbbbb;
+}

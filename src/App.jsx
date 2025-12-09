@@ -8,6 +8,9 @@ import Kyc from "./pages/admin/Kyc";
 import Competitions from "./pages/admin/Competitions";
 import SuperAdminManagement from "./pages/admin/SuperAdminManagement";
 import AdminSettings from "./pages/admin/AdminSettings";
+import GameHub from "./games/GameHub";
+import SpeedTapFrenzy from "./games/SpeedTapFrenzy/SpeedTapFrenzy";
+import Pacman from "./games/Pacman";
 
 function App() {
   return (
@@ -32,6 +35,16 @@ function App() {
         <Route
           path="/admin"
           element={<Navigate to="/admin?role=admin" replace />}
+        />
+
+        {/* MAIN GAME HUB */}
+        <Route path="/games" element={<GameHub />} />
+
+        {/* INDIVIDUAL GAMES */}
+        <Route path="/games/pacman" element={<Pacman />} />
+        <Route
+          path="/games/speed-tap"
+          element={<SpeedTapFrenzy mode="free" />}
         />
       </Routes>
     </BrowserRouter>
