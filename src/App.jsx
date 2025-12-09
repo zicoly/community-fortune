@@ -11,6 +11,12 @@ import AdminSettings from "./pages/admin/AdminSettings";
 import GameHub from "./games/GameHub";
 import SpeedTapFrenzy from "./games/SpeedTapFrenzy/SpeedTapFrenzy";
 import Pacman from "./games/Pacman";
+import ForgotPassword from "./pages/auth/forgot-password/ForgotPassword";
+import ResetPassword from "./pages/auth/reset-password/ResetPassword";
+import Test from "./pages/Test";
+import OTP from "./pages/auth/OTP";
+import KYC from "./pages/auth/KYC";
+import KYCUnderReview from "./pages/auth/KYCUnderReview";
 
 function App() {
   return (
@@ -18,6 +24,12 @@ function App() {
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/test" element={<Test />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/verify-account" element={<OTP />} />
+        <Route path="/kyc-verification" element={<KYC />} />
+        <Route path="/kyc/under-review" element={<KYCUnderReview />} />
         {/* Add more routes */}
         <Route path="/admin" element={<AdminDashboardWrapper />} />
 
